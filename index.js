@@ -55,40 +55,110 @@
 
 // // console.log(arrayRemove([1, 2, 3], 2));
 
-function arrayDiff(a, b) {
-  var unique = [...new Set(a)];
-  console.log(`unique`,unique)
+// function arrayDiff(a, b) {
+//   var unique = [...new Set(a)];
+//   console.log(`unique`,unique)
 
-  for (let j = 0; j < b.length; j++) {
-    console.log(b[j]);
-    // console.log(unique.includes(b[j]), "---------------");
-    // console.log(unique.indexOf(b[j]));
-    // if (unique.includes(b[j])) {
-    //   // return unique.splice(unique.indexOf(b[j]));
-    // }
-    arrayRemove(unique, 1);
+//   for (let j = 0; j < b.length; j++) {
+//     console.log(b[j]);
+//     // console.log(unique.includes(b[j]), "---------------");
+//     // console.log(unique.indexOf(b[j]));
+//     // if (unique.includes(b[j])) {
+//     //   // return unique.splice(unique.indexOf(b[j]));
+//     // }
+//     arrayRemove(unique, 1);
 
-  }
+//   }
+// }
+
+// console.log(arrayDiff([1, 2, 2, 2, 3], [1, 3]), "======");
+// // arrayDiff([1, 2, 2, 2, 3], [1, 3]);
+
+// function alphabetPosition(text) {
+//   const alphabet = "abcdefghijklmnopqrstuvwxyz";
+//   text = text.toLowerCase();
+//   let result = "";
+
+//   for (let i = 0; i < text.length; i++) {
+//     let char = text[i];
+//     let index = alphabet.indexOf(char);
+//     if (index > -1) {
+//       result += index + 1 + " ";
+//     }
+//   }
+
+//   return result.trim();
+// }
+
+// const result = alphabetPosition("The sunset sets at twelve o'clock.");
+// console.log("🚀 ~ result", result);
+
+// ------------------------------------
+
+// function order(words) {
+//   // ...
+//   const a = words.split(" ");
+//   console.log(a);
+
+//   var res = a[0].replace(/\D/g, "");
+//   for (let i = 0; i < a.length; i++) {
+//     const element = a[i];
+//     console.log("🚀 ~ element", element);
+//   }
+// }
+
+// const result = order("is2 Thi1s T4est 3a");
+// console.log("🚀 ~ result", result)
+
+// const person = {
+//   name: "Avi",
+//   age: 22,
+// };
+
+// console.log("name" in person);
+// console.log("school" in person);
+
+// --------------------------
+
+// function reverseWords(str) {
+
+//     return str.split(" ").reverse().join(" ")
+// }
+
+// const res = reverseWords("The greatest victory is that which requires no battle")
+// console.log("🚀 ~ res", res)
+
+function toCamelCase(str) {
+  //   const replaced = str.replaceAll("_", "-");
+  //   const splitMethod = replaced.split("-");
+
+  //   var arr = [];
+  //   for (let i = 0; i < splitMethod.length; i++) {
+  //     const element = splitMethod[i];
+  //     arr.push(splitMethod[i]);
+  //   }
+
+  //   const firstElem = arr[0];
+  //   console.log("🚀 ~ firstElem", firstElem);
+
+  //   arr.shift();
+  //   console.log(arr.length);
+
+  //   const theSecondArr = [];
+
+  //   for (let i = 0; i < arr.length; i++) {
+  //     const element = arr[i];
+  //     theSecondArr.push(element.charAt(0).toUpperCase() + element.slice(1));
+  //   }
+  //   theSecondArr.unshift(firstElem);
+  //   return theSecondArr.join("");
+
+  var regExp = /[-_]\w/gi;
+  console.log("🚀 ~ regExp", regExp)
+  return str.replace(regExp, function (match) {
+    return match.charAt(1).toUpperCase();
+  });
 }
 
-console.log(arrayDiff([1, 2, 2, 2, 3], [1, 3]), "======");
-// arrayDiff([1, 2, 2, 2, 3], [1, 3]);
-
-function alphabetPosition(text) {
-  const alphabet = "abcdefghijklmnopqrstuvwxyz";
-  text = text.toLowerCase();
-  let result = "";
-
-  for (let i = 0; i < text.length; i++) {
-    let char = text[i];
-    let index = alphabet.indexOf(char);
-    if (index > -1) {
-      result += index + 1 + " ";
-    }
-  }
-
-  return result.trim();
-}
-
-const result = alphabetPosition("The sunset sets at twelve o'clock.");
-console.log("🚀 ~ result", result);
+const res = toCamelCase("the-stealth-warrior");
+console.log("🚀 ~ res", res);
